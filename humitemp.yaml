@@ -1,0 +1,59 @@
+esphome:
+  name: humitemp-garage
+  platform: ESP32
+  board: esp32dev
+
+wifi:
+  ssid: "yourWifi"
+  password: "yourPassword"
+  ap:
+    ssid: "HumiFallBack"
+    password: "humitemp"
+
+
+# Recommended so you can publish an MQTT topic to have esphome stay awake to receive an OTA.
+# See : https://esphome.io/components/deep_sleep.html
+mqtt:
+  broker: 192.168.1.1
+  username: mqtt
+  password: mqttpassword
+  on_message:
+    - topic: esphome/ota_mode
+      payload: 'ON'
+      then:
+        - deep_sleep.prevent: deep_sleep_1
+    - topic: esphome/go_to_sleep
+      payload: 'ON'
+      then:
+        - deep_sleep.enter: deep_sleep_1
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+  
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+sensor:
+  - platform: sht3xd
+    temperature:
+      name: "humitemp Temperature"
+    humidity:
+      name: "humitemp Humidity"
+    address: 0x44
+    update_interval: 60s
+    
+# Customize as you wish
+# Make sure to keep it asleep long enough to avoid heating up the ESP32
+deep_sleep:
+  run_duration: 15s
+  sleep_duration: 5min
+  id: deep_sleep_1
