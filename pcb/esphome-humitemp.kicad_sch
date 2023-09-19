@@ -1187,30 +1187,6 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 20.32 147.32 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 0f84ed44-7100-46a7-ad39-73daf9910107)
-    (property "Reference" "H4" (at 24.13 146.0499 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 24.13 148.5899 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 20.32 147.32 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 20.32 147.32 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "esphome-humitemp"
-        (path "/9ed555b5-b872-4c07-8527-e7d67b145785"
-          (reference "H4") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "Device:C_Small") (at 50.8 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 102f14d1-17fa-4a67-bca5-2476e700c880)
@@ -1975,30 +1951,6 @@
       (project "megadesk_companion"
         (path "/efdd8971-0318-4d66-ba3f-bc0ab1fdcf7e"
           (reference "#PWR08") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 20.32 142.24 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid da4c6c03-83bc-41dd-a04e-4f072c44cedd)
-    (property "Reference" "H3" (at 24.13 140.9699 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 24.13 143.5099 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 20.32 142.24 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 20.32 142.24 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "esphome-humitemp"
-        (path "/9ed555b5-b872-4c07-8527-e7d67b145785"
-          (reference "H3") (unit 1)
         )
       )
     )
