@@ -3,10 +3,12 @@
     "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
+    "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
+      "images": 0.6,
       "pads": 1.0,
       "tracks": 1.0,
       "vias": 1.0,
@@ -39,6 +41,7 @@
       9,
       10,
       11,
+      12,
       13,
       14,
       15,
@@ -63,11 +66,11 @@
       35,
       36
     ],
-    "visible_layers": "002f0fc_80000001",
-    "zone_display_mode": 1
+    "visible_layers": "000d030_80000001",
+    "zone_display_mode": 0
   },
   "meta": {
-    "filename": "esphome-temp.kicad_prl",
+    "filename": "esphome-humitemp.kicad_prl",
     "version": 3
   },
   "project": {
