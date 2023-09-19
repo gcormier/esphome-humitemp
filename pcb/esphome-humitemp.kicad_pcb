@@ -1371,7 +1371,12 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "D:/kicad-greg/kicad-espressif/3dmodels/espressif.3dshapes/ESP32-C3-MINI-1.STEP"
+    (model "D:/kicad-greg/kicad-espressif/3dmodels/espressif.3dshapes/ESP32-C3-MINI-1.STEP" hide
+      (offset (xyz -6.6 -8.3 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
+    (model "${KIPRJMOD}/ESP32-C3-MINI-1.STEP"
       (offset (xyz -6.6 -8.3 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
