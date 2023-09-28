@@ -39,7 +39,7 @@ outputs:
             #hcount: 1
           cuts:
             type: vcuts
-            layer: F.Fab
+            layer: Edge.Cuts
           framing:
             type: railstb
             width: 5mm
