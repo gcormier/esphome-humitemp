@@ -30,27 +30,17 @@ outputs:
         - layout:
             rows: 5
             cols: 1
-            space: 0
-            #hbackbone: 5
-            #vbackbone: 5
-            #hboneskip: 1
-            #vboneskip: 1
-          #page:
-            #size: A3
+            space: 4mm
           tabs:
-            type: full
-            #width: 3
-            #vcount: 2
+            type: fixed
+            width: 5mm
+            vcount: 2
             #hcount: 0
           cuts:
             type: vcuts
-            layer: Edge.Cuts
-            #drill: 0.5
-            #spacing: 1mm
-            #offset: 0.2
-            #prolong: 0.5
+            layer: F.Fab
           framing:
-            type: frame
+            type: tightframe
             width: 5mm
             space: 3mm
             fillet: 1mm
@@ -83,3 +73,4 @@ outputs:
             vjustify: center
           post:
             refillzones: true
+            millradius: 1mm
