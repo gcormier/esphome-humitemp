@@ -1,5 +1,5 @@
-<img  src="https://github.com/gcormier/esphome-humitemp/blob/main/esphome-humitemp1.png"  width=25%/> <img  src="https://github.com/gcormier/esphome-humitemp/blob/main/esphome-humitemp2.png"  width=20%/>
-# esphome-humidtemp
+<img  src="https://github.com/gcormier/esphome-humitemp/blob/main/render.png"  width=25%/> <img  src="https://github.com/gcormier/esphome-humitemp/blob/main/esphome-humitemp2.png"  width=20%/>
+# esphome-humitemp
 - SHT3x temperature/humidity sensor
 - ESP32
 - Programming header for [eflashy32](https://github.com/gcormier/eflashy32)
