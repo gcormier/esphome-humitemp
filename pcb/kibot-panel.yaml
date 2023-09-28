@@ -28,19 +28,20 @@ outputs:
       units: mm
       configs:
         - layout:
-            rows: 5
-            cols: 1
+            rows: 3
+            cols: 2
             space: 4mm
+            alternation: cols
           tabs:
             type: fixed
             width: 5mm
             vcount: 2
-            hcount: 2
+            #hcount: 1
           cuts:
             type: vcuts
             layer: F.Fab
           framing:
-            type: tightframe
+            type: railstb
             width: 5mm
             space: 3mm
             fillet: 1mm
