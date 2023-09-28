@@ -50,9 +50,9 @@ outputs:
             #offset: 0.2
             #prolong: 0.5
           framing:
-            type: railstb
-            width: 5
-            space: 3
+            type: frame
+            width: 5mm
+            space: 3mm
             fillet: 1mm
             mintotalwidth: 70mm
             mintotalheight: 70mm
