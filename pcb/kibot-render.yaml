@@ -12,7 +12,7 @@ outputs:
       view: top
       rotate_x: 4
       rotate_y: 0
-      rotate_z: 4
+      rotate_z: -4
       ray_tracing: true
       auto_crop: true
       transparent_background: true
