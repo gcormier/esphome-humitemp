@@ -1,4 +1,5 @@
 <img  src="https://github.com/gcormier/esphome-humitemp/blob/main/render.png"/> 
+
 # esphome-humitemp
 - SHT3x temperature/humidity sensor
 - ESP32-C3
