@@ -53,8 +53,8 @@ jobs:
         uses: actions/cache@v3
         id: cache-esphome
         with:
-          path: /.esphome/
-          key: ${{ runner.os }}-esphome
+          path: .esphome/*
+          key: esphome
 
       - name: Build firmware
         uses: esphome/build-action@v1.8.0
