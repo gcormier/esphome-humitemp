@@ -25,6 +25,8 @@ jobs:
   # Build job
   build-docs:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_STEP_DEBUG: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +37,7 @@ jobs:
         with:
           source: ./docs
           destination: ./_site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
   
@@ -50,7 +53,7 @@ jobs:
         uses: actions/cache@v3
         id: cache-esphome
         with:
-          path: ~/.esphome
+          path: /.esphome/
           key: ${{ runner.os }}-esphome
 
       - name: Build firmware
@@ -66,7 +69,7 @@ jobs:
           jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.esphome-version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' output/${{ steps.esphome-build.outputs.name }}/manifest.json > output/manifest.json
           ls -l
           ls -l output
-          
+          pwd
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3.1.2
