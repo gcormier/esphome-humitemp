@@ -45,6 +45,13 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3.3.0
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        id: cache-esphome
+        with:
+          path: ~/.esphome
+          key: ${{ runner.os }}-esphome
+          
       - name: Build firmware
         uses: esphome/build-action@v1.8.0
         id: esphome-build
