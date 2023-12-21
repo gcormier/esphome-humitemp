@@ -64,8 +64,8 @@ jobs:
           mv ${{ steps.esphome-build.outputs.name }} output/
           jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.esphome-version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' output/${{ steps.esphome-build.outputs.name }}/manifest.json > output/manifest.json
           ls -l
-          find
-          ls
+          ls -l output
+          
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3.1.2
