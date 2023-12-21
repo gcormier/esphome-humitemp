@@ -11,12 +11,13 @@ esphome:
 
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  #ssid: !secret wifi_ssid
+  #password: !secret wifi_password
   ap:
     ssid: "HumiFallBack"
     password: "humitemp"
 
+improv_serial:
 
 # Recommended so you can publish an MQTT topic to have esphome stay awake to receive an OTA.
 # See : https://esphome.io/components/deep_sleep.html
