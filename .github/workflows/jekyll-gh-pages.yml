@@ -45,7 +45,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3.3.0
-      - name: Cache Gradle packages
+      
+      - name: Cache esphome packages
         uses: actions/cache@v3
         id: cache-esphome
         with:
