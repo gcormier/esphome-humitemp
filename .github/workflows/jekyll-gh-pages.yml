@@ -63,9 +63,15 @@ jobs:
           echo ${{ steps.esphome-build.outputs.version }}
           jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' docs/${{ steps.esphome-build.outputs.name }}/manifest.json >> docs/manifest.json
 
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2.0.0
+        with:
+          path: docs
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
       
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      #- name: Setup tmate session
+        #uses: mxschmitt/action-tmate@v3
