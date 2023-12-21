@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  build-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,14 +37,38 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+  
+  build-firmware:
+    name: Build firmware
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3.3.0
+      - name: Build firmware
+        uses: esphome/build-action@v1.8.0
+        id: esphome-build
+        with:
+          yaml_file: humitemp.yaml
+          version: latest
+      - name: Copy firmware and manifest
+        run: |
+          mkdir output
+          mv ${{ steps.esphome-build.outputs.name }} output/
+          jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.esphome-version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' output/${{ steps.esphome-build.outputs.name }}/manifest.json > output/manifest.json
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: manifest.json
+          path: output
   # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build-docs, build-firmware]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
