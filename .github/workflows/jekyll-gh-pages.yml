@@ -61,7 +61,7 @@ jobs:
           mkdir output
           mv ${{ steps.esphome-build.outputs.name }}/${{ steps.esphome-build.outputs.name }}.bin docs/
           echo ${{ steps.esphome-build.outputs.version }}
-#          jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' ${{ steps.esphome-build.outputs.name }}/${{ steps.esphome-build.outputs.name }}/manifest.json > docs/manifest.json
+          jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' ${{ steps.esphome-build.outputs.name }}/${{ steps.esphome-build.outputs.name }}/manifest.json >> docs/manifest.json
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -74,3 +74,4 @@ jobs:
       #- name: sleep forever
       #  run: |
       #    sleep 3600
+
