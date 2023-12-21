@@ -103,3 +103,8 @@ jobs:
         uses: actions/deploy-pages@v3
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
+        with:
+          detached: true
+      - name: sleep forever
+        run: |
+          sleep 3600
