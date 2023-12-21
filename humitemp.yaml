@@ -5,7 +5,7 @@ esp32:
     version: recommended
 
 esphome:
-  name: humitemp-2
+  name: humitemp
   platformio_options:
     board_build.flash_mode: dio # If you don't specify this using esp-idf framework, the device will boot-loop.
 
@@ -46,7 +46,6 @@ captive_portal:
 # Enable logging
 logger:
   # Use the ESP32-C3-MINI's native USB port for serial logging. Comment this out if you want to use the pin header.
-  # Seems buggy.
   hardware_uart: USB_SERIAL_JTAG
 
 # Enable Home Assistant API
