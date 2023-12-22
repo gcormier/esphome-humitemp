@@ -65,11 +65,6 @@ sensor:
 # Customize as you wish
 # Make sure to keep it asleep long enough to avoid heating up the ESP32
 deep_sleep:
-  wakeup_pin:
-    pin: GPIO9 # Button
-    inverted: true
-    mode: INPUT_PULLUP
-
   run_duration: 15s
   sleep_duration: 5min
   id: deep_sleep_1
