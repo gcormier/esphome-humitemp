@@ -33,21 +33,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Build firmware
-        uses: esphome/build-action@v1.8.0
-        id: esphome-build
-        with:
-          yaml_file: humitemp.yaml
-          version: latest
+#      - name: Build firmware
+#        uses: esphome/build-action@v1.8.0
+#        id: esphome-build
+#        with:
+#          yaml_file: humitemp.yaml
+#          version: latest
 
-      - name: Copy firmware and manifest
-        run: |
-          mkdir docs/firmware
-          mv ${{ steps.esphome-build.outputs.name }} docs/firmware
-          jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' docs/firmware/${{ steps.esphome-build.outputs.name }}/manifest.json >> docs/firmware/manifest.json
-          ls -la
-          find docs/
-          
+#      - name: Copy firmware and manifest
+#        run: |
+#          mkdir docs/firmware
+#          mv ${{ steps.esphome-build.outputs.name }} docs/firmware
+#          jq -s '{"name": "esphome-humitemp v2", "new_install_improv_wait_time": 15, "new_install_prompt_erase": true, "version": "${{ steps.esphome-build.outputs.version }}", "home_assistant_domain": "esphome", "new_install_skip_erase": false, "builds":.}' docs/firmware/${{ steps.esphome-build.outputs.name }}/manifest.json >> docs/firmware/manifest.json
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -58,7 +55,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: docs
+          path: ./docs
 
       - name: Deploy to GitHub Pages
         id: deployment
